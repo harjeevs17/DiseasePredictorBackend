@@ -1,1 +1,1 @@
-pip install -r requirments.txt
+pip install -r requirments.txt && npm start
