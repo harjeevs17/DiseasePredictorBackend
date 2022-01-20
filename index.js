@@ -16,13 +16,14 @@ app.post('/getP',(req,res)=>{
     data.map((item,key)=>{
         payload.push(item)
     })
+    console.log("mapped");
     const { spawn } = require('child_process');
     const pyProg = spawn('python',payload);
     let respose = ''
     pyProg.stdout.on('data', function(data) {
         res.end(data.toString().trim())
-
     });
+    console.log("weqeqw");
 })
 const server = http.listen(PORT, () => {
     console.log("Listening to port", PORT);
