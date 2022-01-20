@@ -16,7 +16,7 @@ app.post('/getP',(req,res)=>{
     data.map((item,key)=>{
         payload.push(item)
     })
-    console.log("mapped");
+    console.log("mappedd");
     const { spawn } = require('child_process');
     const pyProg = spawn('python',payload);
     let respose = ''
