@@ -11,9 +11,7 @@ let bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.post('/getP',(req,res)=>{
-    console.log("Reached"+req)
-    res.end("This is itt")
-    /*let data = req.body.symptoms.toString().split(",")
+    let data = req.body.symptoms.toString().split(",")
     var payload = ["./hello.py"]
     data.map((item,key)=>{
         payload.push(item)
@@ -25,7 +23,7 @@ app.post('/getP',(req,res)=>{
     pyProg.stdout.on('data', function(data) {
         res.end(data.toString().trim())
     });
-    console.log("weqeqw");*/
+    console.log("weqeqw");
 })
 const server = http.listen(PORT, () => {
     console.log("Listening to port", PORT);
