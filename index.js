@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.post('/getP',(req,res)=>{
     console.log("Reached"+req)
-    res.end("This is it")
+    res.end("This is itt")
     /*let data = req.body.symptoms.toString().split(",")
     var payload = ["./hello.py"]
     data.map((item,key)=>{
