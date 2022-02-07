@@ -22,7 +22,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
     pyProg.stdout.on('data', function(data) {
         res.end(data.toString().trim())
 
-    });
+    });k
 })*/
 
 app.get('/hello',(req,res)=>{
