@@ -1,1 +1,1 @@
-pip install -r requirments.txt && npm start
+web: python website/manage.py runserver 0.0.0.0:$PORT
