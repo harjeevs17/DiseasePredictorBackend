@@ -26,7 +26,7 @@ exec("python hello.py", (error, stdout, stderr) => {
     console.log(`stdout: ${stdout}`);
 });
 
-app.post('/getP',(req,res)=>{
+app.post('/getP',timeout('30s'), haltOnTimedout,(req,res)=>{
     let data = req.body.symptoms.toString().split(",")
     var payload = ["./diseasePrediction.py"]
     data.map((item,key)=>{
@@ -40,6 +40,10 @@ app.post('/getP',(req,res)=>{
 
     });
 })
+
+function haltOnTimedout (req, res, next) {
+    if (!req.timedout) next()
+}
 
 app.get('/hello',(req,res)=>{
    res.end("Hello")
