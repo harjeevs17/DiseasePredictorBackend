@@ -1,1 +1,1 @@
-web: python hello.py runserver 0.0.0.0:$PORT
+web: python diseasePrediction.py "Pain Behind The Eyes","Puffy Face And Eyes","Redness Of Eyes","Sunken Eyes" runserver 0.0.0.0:$PORT
