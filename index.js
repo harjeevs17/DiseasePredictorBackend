@@ -10,7 +10,7 @@ let bodyParser = require('body-parser');
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-/*app.post('/getP',(req,res)=>{
+app.post('/getP',(req,res)=>{
     let data = req.body.symptoms.toString().split(",")
     var payload = ["./diseasePrediction.py"]
     data.map((item,key)=>{
@@ -22,8 +22,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
     pyProg.stdout.on('data', function(data) {
         res.end(data.toString().trim())
 
-    });k
-})*/
+    });
+})
 
 app.get('/hello',(req,res)=>{
    res.end("Hello")
