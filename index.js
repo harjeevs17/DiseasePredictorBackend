@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.post('/getP',(req,res)=>{
     let data = req.body.symptoms.toString().split(",")
-    var payload = ["./diseasePrediction.py"]
+    var payload = ["./hello.py"]
     data.map((item,key)=>{
         payload.push(item)
     })
