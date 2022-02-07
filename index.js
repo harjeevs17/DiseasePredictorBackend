@@ -6,6 +6,7 @@ var cors = require("cors");
 const { argv } = require("process");
 const router = express.Router();
 let bodyParser = require('body-parser');
+var timeout = require('connect-timeout')
 
 app.use(cors());
 app.use(bodyParser.json());
