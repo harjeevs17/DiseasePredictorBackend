@@ -26,7 +26,20 @@ exec("python hello.py", (error, stdout, stderr) => {
     console.log(`stdout: ${stdout}`);
 });
 
+app.post('/getP',(req,res)=>{
+    let data = req.body.symptoms.toString().split(",")
+    var payload = ["./diseasePrediction.py"]
+    data.map((item,key)=>{
+        payload.push(item)
+    })
+    const { spawn } = require('child_process');
+    const pyProg = spawn('python',payload);
+    let respose = ''
+    pyProg.stdout.on('data', function(data) {
+        res.end(data.toString().trim())
 
+    });
+})
 
 app.get('/hello',(req,res)=>{
    res.end("Hello")
